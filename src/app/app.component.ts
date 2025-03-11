@@ -1,8 +1,13 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { FooterComponent, HeaderComponent } from './shared';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  host: {
+    class: 'flex flex-col min-h-screen',
+  },
+  imports: [RouterModule, HeaderComponent, FooterComponent],
 })
 export class AppComponent {}

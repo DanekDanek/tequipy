@@ -1,0 +1,9 @@
+<app-layout>
+  <h1>Page title</h1>
+  <nav mat-tab-nav-bar mat-stretch-tabs [tabPanel]="tabPanel" class="stretched-tabs">
+    <a mat-tab-link [routerLink]="['employees']"> Employees </a>
+  </nav>
+  <mat-tab-nav-panel #tabPanel>
+    <router-outlet />
+  </mat-tab-nav-panel>
+</app-layout>
