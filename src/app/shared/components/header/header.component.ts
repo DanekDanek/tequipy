@@ -4,7 +4,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 @Component({
   selector: 'app-header',
   host: {
-    class: 'w-full shrink-0',
+    class: 'w-full shrink-0 shadow',
   },
   imports: [MatToolbarModule],
   templateUrl: './header.component.html',
