@@ -6,6 +6,12 @@
       container-background-color: orange,
     )
   );
+  @include mat.tabs-overrides(
+    (
+      active-indicator-color: orange,
+      divider-color: orange,
+    )
+  );
 }
 
 @import 'tailwindcss';
