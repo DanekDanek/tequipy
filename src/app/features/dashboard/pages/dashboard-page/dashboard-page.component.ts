@@ -1,11 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { LayoutComponent } from '../../../../shared';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard-page',
-  imports: [LayoutComponent, MatTabsModule, RouterModule],
+  imports: [
+    LayoutComponent,
+    MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    RouterModule,
+    FormsModule,
+    MatIconModule,
+  ],
   templateUrl: './dashboard-page.component.html',
   styles: `
     .stretched-tabs {
@@ -13,4 +25,16 @@ import { RouterModule } from '@angular/router';
     }
   `,
 })
-export class DashboardPageComponent {}
+export class DashboardPageComponent {
+  router = inject(Router);
+  route = inject(ActivatedRoute);
+
+  searchPhrase = '';
+
+  onFilterChange() {
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: { search: this.searchPhrase },
+    });
+  }
+}
