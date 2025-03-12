@@ -1,4 +1,13 @@
 <div>
-  <a mat-button [routerLink]="['/dashboard']">Back</a>
+  <a mat-button [routerLink]="['/dashboard']">
+    <mat-icon>arrow_back_ios</mat-icon>
+    Back
+  </a>
 </div>
-<app-employee-details />
+<div class="px-6">
+  <div class="flex justify-between items-center mb-8">
+    <h1 class="text-4xl">Gloria Rice</h1>
+    <button mat-flat-button>Offboard</button>
+  </div>
+  <app-employee-details />
+</div>
