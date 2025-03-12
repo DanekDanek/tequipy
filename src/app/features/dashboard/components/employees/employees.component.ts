@@ -1,9 +1,8 @@
-import { Component, DestroyRef, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { Employee } from '../../../../shared';
-import { EmployeesService } from '../../services/employees.service';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
+import { EmployeesStoreService } from '../../services/employees-store.service';
 
 @Component({
   selector: 'app-employees',
@@ -13,13 +12,10 @@ import { RouterLink } from '@angular/router';
 export class EmployeesComponent implements OnInit {
   displayedColumns: string[] = ['fullName', 'email', 'department', 'equipments', 'status'];
   dataSource: Employee[] = [];
-  employeesService = inject(EmployeesService);
-  destroyRef = inject(DestroyRef);
+  employeesStoreService = inject(EmployeesStoreService);
 
   ngOnInit(): void {
-    this.employeesService
-      .getEmployees()
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe((response) => (this.dataSource = response));
+    this.employeesStoreService.getEmployees();
+    this.employeesStoreService.employees$.subscribe((employees) => (this.dataSource = employees));
   }
 }

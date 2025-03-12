@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 import { EmployeeDetailsPageComponent } from './pages/employee-details-page/employee-details-page.component';
-import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
+import { EmployeeResolver } from './resolvers/employee-details.resolver';
 
 export const employeeRoutes: Routes = [
   {
-    path: '',
+    path: ':id',
     component: EmployeeDetailsPageComponent,
-    children: [
-      {
-        path: ':id',
-        component: EmployeeDetailsComponent,
-      },
-    ],
+    resolve: {
+      employee: EmployeeResolver,
+    },
   },
 ];

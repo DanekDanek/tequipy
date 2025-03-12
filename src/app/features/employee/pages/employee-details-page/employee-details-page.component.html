@@ -5,9 +5,11 @@
   </a>
 </div>
 <div class="px-6">
-  <div class="flex justify-between items-center mb-8">
-    <h1 class="text-4xl">Gloria Rice</h1>
-    <button mat-flat-button>Offboard</button>
-  </div>
-  <app-employee-details />
+  @if (employee) {
+    <div class="flex justify-between items-center mb-8">
+      <h1 class="text-4xl">{{ employee.name }}</h1>
+      <button mat-flat-button>Offboard</button>
+    </div>
+    <app-employee-details [employee]="employee" />
+  }
 </div>

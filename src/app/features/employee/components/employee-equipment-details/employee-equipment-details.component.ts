@@ -8,9 +8,6 @@ import { Equipment } from '../../../../shared';
   templateUrl: './employee-equipment-details.component.html',
 })
 export class EmployeeEquipmentDetailsComponent {
-  dataSource = input<Equipment[]>([
-    { id: '1', name: 'MacBook Pro' },
-    { id: '2', name: 'Apple Magic Mouse' },
-  ]);
+  equipments = input.required<Equipment[]>();
   displayedColumns = ['item', 'id'];
 }
