@@ -6,7 +6,7 @@ import { FooterComponent, HeaderComponent } from './shared';
   selector: 'app-root',
   templateUrl: './app.component.html',
   host: {
-    class: 'flex flex-col min-h-screen bg-gray-200',
+    class: 'flex flex-col min-h-screen bg-gray-100',
   },
   imports: [RouterModule, HeaderComponent, FooterComponent],
 })

@@ -1,1 +1,15 @@
-<p>employee-equipment-details works!</p>
+<section class="flex flex-col">
+  <h2 class="w-full border-b-3 pb-2 mb-6">Equipment</h2>
+  <table mat-table [dataSource]="dataSource()" class="mat-elevation-z8">
+    <ng-container matColumnDef="item">
+      <th mat-header-cell *matHeaderCellDef>Item</th>
+      <td mat-cell *matCellDef="let equipment">{{ equipment.name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let equipment">{{ equipment.id }}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</section>
