@@ -12,6 +12,10 @@ export const routes: Routes = [
       import('./features/dashboard/dashboard.routes').then((m) => m.dashboardRoutes),
   },
   {
+    path: 'employee',
+    loadChildren: () => import('./features/employee/employee.routes').then((m) => m.employeeRoutes),
+  },
+  {
     path: 'page-not-found',
     loadComponent: () =>
       import('./shared/components/page-not-found/page-not-found.component').then(
