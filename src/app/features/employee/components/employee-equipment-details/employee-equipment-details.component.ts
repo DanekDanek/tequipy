@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
-import { Equipment } from '../../../../shared';
+import { Equipment } from '@shared/equipment.interface';
 
 @Component({
   selector: 'app-employee-equipment-details',

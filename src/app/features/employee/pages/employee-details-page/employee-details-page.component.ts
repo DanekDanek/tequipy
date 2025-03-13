@@ -4,10 +4,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { Employee } from '../../../../shared';
-import { OffboardingDialogComponent } from '../../../offboarding/components/offboarding-dialog/offboarding-dialog.component';
-import { EmployeesStoreService } from '../../../dashboard/services/employees-store.service';
-import { UsersService } from '../../../offboarding/services/users.service';
+import { Employee } from '@shared/employee.interface';
+import { OffboardingDialogComponent, UsersService } from 'app/features/offboarding';
+import { EmployeesStoreService } from '@shared/employees-store.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({

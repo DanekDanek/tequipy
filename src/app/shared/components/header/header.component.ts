@@ -6,7 +6,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   host: {
     class: 'w-full shrink-0 shadow',
   },
+  template: `
+    <mat-toolbar>
+      <span class="text-xl font-bold">Home task</span>
+    </mat-toolbar>
+  `,
   imports: [MatToolbarModule],
-  templateUrl: './header.component.html',
 })
 export class HeaderComponent {}

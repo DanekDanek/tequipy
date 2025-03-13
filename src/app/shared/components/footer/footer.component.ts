@@ -6,8 +6,16 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   host: {
     class: 'w-full shrink-0 shadow',
   },
+  template: `
+    <footer>
+      <mat-toolbar>
+        <p class="w-full flex justify-center align-center text-sm">
+          &copy; {{ currentYear() }} All rights reserved
+        </p>
+      </mat-toolbar>
+    </footer>
+  `,
   imports: [MatToolbarModule],
-  templateUrl: './footer.component.html',
 })
 export class FooterComponent {
   date = new Date();

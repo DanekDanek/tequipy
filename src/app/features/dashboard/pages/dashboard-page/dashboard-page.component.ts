@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
-import { LayoutComponent } from '../../../../shared';
+import { LayoutComponent } from '@shared/layout.component';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';

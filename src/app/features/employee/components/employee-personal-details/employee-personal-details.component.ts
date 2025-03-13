@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Employee } from '../../../../shared';
+import { Employee } from '@shared/employee.interface';
 
 @Component({
   selector: 'app-employee-personal-details',

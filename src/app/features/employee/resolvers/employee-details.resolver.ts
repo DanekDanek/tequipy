@@ -1,8 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
-import { EmployeesHttpService } from '../../dashboard/services/employees.http.service';
-import { Employee } from '../../../shared';
+import { Employee, EmployeesHttpService } from '@shared/employees.http.service';
 
 @Injectable({ providedIn: 'root' })
 export class EmployeeResolver implements Resolve<Employee> {

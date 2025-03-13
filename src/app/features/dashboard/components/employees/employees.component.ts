@@ -2,9 +2,8 @@ import { Component, inject, OnInit } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { Employee } from '../../../../shared';
 import { ActivatedRoute, Params, RouterLink } from '@angular/router';
-import { EmployeesStoreService } from '../../services/employees-store.service';
+import { Employee, EmployeesStoreService } from '@shared/store/employees-store.service';
 
 @Component({
   selector: 'app-employees',

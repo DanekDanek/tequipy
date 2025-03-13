@@ -1,8 +1,8 @@
 import { DestroyRef, inject, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Employee } from '../../../shared';
-import { EmployeesHttpService } from './employees.http.service';
+import { Employee } from '@shared/employee.interface';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { EmployeesHttpService } from '@shared/employees.http.service';
 
 @Injectable({
   providedIn: 'root',

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { UserOffboard } from '../../../shared/interfaces/user-offboard.interface';
+import { UserOffboard } from '@shared/user-offboard.interface';
 
 @Injectable({
   providedIn: 'root',

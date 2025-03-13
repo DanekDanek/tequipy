@@ -1,8 +1,8 @@
 import { Component, inject, viewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { Employee } from '../../../../shared';
 import { OffboardingFormComponent } from '../offboarding-form/offboarding-form.component';
+import { Employee } from '@shared/employee.interface';
 
 @Component({
   selector: 'app-offboarding-dialog',
