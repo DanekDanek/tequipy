@@ -9,5 +9,5 @@ import { Equipment } from '@shared/equipment.interface';
 })
 export class EmployeeEquipmentDetailsComponent {
   equipments = input.required<Equipment[]>();
-  displayedColumns = ['item', 'id'];
+  protected displayedColumns = ['item', 'id'];
 }

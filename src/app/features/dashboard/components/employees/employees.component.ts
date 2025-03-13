@@ -14,12 +14,18 @@ import { Employee, EmployeesStoreService } from '@shared/store/employees-store.s
   templateUrl: './employees.component.html',
 })
 export class EmployeesComponent implements OnInit {
-  displayedColumns: string[] = ['fullName', 'email', 'department', 'equipments', 'status'];
-  dataSource: Employee[] = [];
-  employees: Employee[] = [];
+  protected displayedColumns: string[] = [
+    'fullName',
+    'email',
+    'department',
+    'equipments',
+    'status',
+  ];
+  protected dataSource: Employee[] = [];
+  private employees: Employee[] = [];
 
-  employeesStoreService = inject(EmployeesStoreService);
-  route = inject(ActivatedRoute);
+  private employeesStoreService = inject(EmployeesStoreService);
+  private route = inject(ActivatedRoute);
 
   ngOnInit(): void {
     this.employeesStoreService.getEmployees();

@@ -6,7 +6,7 @@ import { Employee } from '@shared/employee.interface';
   providedIn: 'root',
 })
 export class EmployeesHttpService {
-  http = inject(HttpClient);
+  private http = inject(HttpClient);
 
   getEmployees() {
     return this.http.get<Employee[]>('/api/employees');

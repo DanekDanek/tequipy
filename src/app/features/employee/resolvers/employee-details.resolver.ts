@@ -5,7 +5,7 @@ import { Employee, EmployeesHttpService } from '@shared/employees.http.service';
 
 @Injectable({ providedIn: 'root' })
 export class EmployeeResolver implements Resolve<Employee> {
-  employeesHttpService = inject(EmployeesHttpService);
+  private employeesHttpService = inject(EmployeesHttpService);
 
   resolve(route: ActivatedRouteSnapshot): Observable<Employee> | Promise<Employee> | Employee {
     const employeeId = route.paramMap.get('id') ?? '';

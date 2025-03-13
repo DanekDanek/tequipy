@@ -22,13 +22,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './employee-details-page.component.html',
 })
 export class EmployeeDetailsPageComponent implements OnInit {
-  route = inject(ActivatedRoute);
-  employeesStoreService = inject(EmployeesStoreService);
-  usersService = inject(UsersService);
-  employee: Employee | null = null;
-  dialog = inject(MatDialog);
-
+  private route = inject(ActivatedRoute);
+  private employeesStoreService = inject(EmployeesStoreService);
+  private usersService = inject(UsersService);
+  private dialog = inject(MatDialog);
   private _snackBar = inject(MatSnackBar);
+
+  protected employee: Employee | null = null;
 
   ngOnInit(): void {
     this.employee = this.route.snapshot.data['employee'];
@@ -41,9 +41,6 @@ export class EmployeeDetailsPageComponent implements OnInit {
   onOpenDialog() {
     const dialogRef = this.dialog.open(OffboardingDialogComponent, {
       width: '600px',
-      data: {
-        employee: this.employee,
-      },
     });
 
     dialogRef.afterClosed().subscribe((result) => {

@@ -26,10 +26,10 @@ import { FormsModule } from '@angular/forms';
   `,
 })
 export class DashboardPageComponent {
-  router = inject(Router);
-  route = inject(ActivatedRoute);
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
 
-  searchPhrase = '';
+  protected searchPhrase = '';
 
   onFilterChange() {
     this.router.navigate([], {

@@ -18,6 +18,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   imports: [MatToolbarModule],
 })
 export class FooterComponent {
-  date = new Date();
-  currentYear = signal(this.date.getFullYear());
+  private date = new Date();
+  protected currentYear = signal(this.date.getFullYear());
 }

@@ -6,7 +6,7 @@ import { UserOffboard } from '@shared/user-offboard.interface';
   providedIn: 'root',
 })
 export class UsersHttpService {
-  http = inject(HttpClient);
+  private http = inject(HttpClient);
 
   offboardUser(userOffboard: UserOffboard, userId: string) {
     return this.http.post(`/api/users/${userId}/offboard`, { ...userOffboard });

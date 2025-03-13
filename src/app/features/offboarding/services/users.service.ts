@@ -6,7 +6,7 @@ import { UserOffboard } from '@shared/user-offboard.interface';
   providedIn: 'root',
 })
 export class UsersService {
-  usersHttpService = inject(UsersHttpService);
+  private usersHttpService = inject(UsersHttpService);
 
   offboardUser(userOffboard: UserOffboard, userId: string) {
     this.usersHttpService.offboardUser(userOffboard, userId).subscribe();

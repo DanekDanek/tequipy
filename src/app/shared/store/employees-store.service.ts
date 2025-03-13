@@ -9,8 +9,9 @@ import { EmployeesHttpService } from '@shared/employees.http.service';
 })
 export class EmployeesStoreService {
   employees$ = new BehaviorSubject<Employee[]>([]);
-  destroyRef = inject(DestroyRef);
-  employeesHttpService = inject(EmployeesHttpService);
+
+  private destroyRef = inject(DestroyRef);
+  private employeesHttpService = inject(EmployeesHttpService);
 
   getEmployees() {
     this.employeesHttpService
