@@ -8,6 +8,7 @@ import { Employee } from '../../../../shared';
 import { OffboardingDialogComponent } from '../../../offboarding/components/offboarding-dialog/offboarding-dialog.component';
 import { EmployeesStoreService } from '../../../dashboard/services/employees-store.service';
 import { UsersService } from '../../../offboarding/services/users.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-employee-details-page',
@@ -26,11 +27,16 @@ export class EmployeeDetailsPageComponent implements OnInit {
   employeesStoreService = inject(EmployeesStoreService);
   usersService = inject(UsersService);
   employee: Employee | null = null;
+  dialog = inject(MatDialog);
 
-  readonly dialog = inject(MatDialog);
+  private _snackBar = inject(MatSnackBar);
 
   ngOnInit(): void {
     this.employee = this.route.snapshot.data['employee'];
+
+    this.employeesStoreService.employees$.subscribe((employees) => {
+      this.employee = employees.filter((employee) => employee.id === this.employee?.id)[0];
+    });
   }
 
   onOpenDialog() {
@@ -45,7 +51,16 @@ export class EmployeeDetailsPageComponent implements OnInit {
       if (result?.offboarded && this.employee) {
         this.employeesStoreService.offboardEmployee(this.employee.id);
         this.usersService.offboardUser(result.data, this.employee.id);
+        this.openSnackBar();
       }
+    });
+  }
+
+  openSnackBar() {
+    this._snackBar.open('Status has been changed to OFFBOARDED', 'Close', {
+      horizontalPosition: 'right',
+      verticalPosition: 'top',
+      duration: 2000,
     });
   }
 }
