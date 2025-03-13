@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Employee } from '../interfaces/employee.interface';
+import { UserOffboard } from '../interfaces/user-offboard.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -61,6 +62,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
     ];
 
-    return { employees };
+    const users: UserOffboard[] = [];
+    return { employees, users };
   }
 }

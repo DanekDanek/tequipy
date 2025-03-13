@@ -12,9 +12,12 @@ import { OffboardingFormComponent } from '../offboarding-form/offboarding-form.c
 export class OffboardingDialogComponent {
   data = inject<{ employee: Employee }>(MAT_DIALOG_DATA);
 
-  constructor(public dialogRef: MatDialogRef<OffboardingDialogComponent>) {}
+  constructor(private dialogRef: MatDialogRef<OffboardingDialogComponent>) {}
 
-  closeDialog() {
-    this.dialogRef.close('Pizza!');
+  onConfirm() {
+    this.dialogRef.close({
+      offboarded: true,
+      data: this.data.employee,
+    });
   }
 }
