@@ -1,4 +1,4 @@
-import { Equipment } from './equipment.type';
+import { Equipment } from './equipment.interface';
 
 export interface Employee {
   id: string;

@@ -5,8 +5,8 @@ export * from './components/layout/layout.component';
 export * from './components/page-not-found/page-not-found.component';
 
 // Types
-export * from './types/employee.type';
-export * from './types/equipment.type';
+export * from './interfaces/employee.interface';
+export * from './interfaces/equipment.interface';
 
 // Services
 export * from './services/in-memory-data.service';

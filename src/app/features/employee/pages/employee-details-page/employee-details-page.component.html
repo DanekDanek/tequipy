@@ -8,7 +8,7 @@
   @if (employee) {
     <div class="flex justify-between items-center mb-8">
       <h1 class="text-4xl">{{ employee.name }}</h1>
-      <button mat-flat-button>Offboard</button>
+      <button mat-flat-button (click)="onOpenDialog()">Offboard</button>
     </div>
     <app-employee-details [employee]="employee" />
   }
