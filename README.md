@@ -2,7 +2,7 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
 
-## Development server
+## Development server (FE)
 
 To start a local development server, run:
 
@@ -10,50 +10,16 @@ To start a local development server, run:
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Once the server is running, open your browser and navigate to `http://localhost:4200/`.
 
-## Code scaffolding
+## Backend
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+The mock backend was made using `angular-in-memory-web-api`. As such, when you run `ng serve` the backend starts automatically. It has its limitations, but it was created for creating quick POCs and I think it fits the bill perfectly.
 
-```bash
-ng generate component component-name
-```
+## Assumptions
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+The application was designed by me to make it easy to add new functionalities. For this reason, the dashboard uses a tabs component, and each of them is potentially a link (like the employees shown in the example). The application is divided into features (via folders), but it is based on standalone components. Parts that are used in different features are in the shared folder.
 
-```bash
-ng generate --help
-```
+## App state
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+The application state is kept in a service that uses `BehaviorSubject`. For this size of the application, this is more than sufficient. For a more complex structure, it might be necessary to use the redux approach.
